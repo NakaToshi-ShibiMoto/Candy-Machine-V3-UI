@@ -1,0 +1,14 @@
+{
+  "number": 777,
+  "symbol": "RZOM",
+  "sellerFeeBasisPoints": 500,
+  "isMutable": true,
+  "isSequential": false,
+  "creators": [
+    {
+      "address": "CM1h4zABFNvZs5vt3SiNghHBjaf2cVbZAR6pZzXZNUT7",
+      "share": 100
+    }
+  ],
+  "uploadMethod": "bundlr"
+}

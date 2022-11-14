@@ -2,7 +2,7 @@
 :root {
   --main-background-color: #000;
   --card-background-color: #804980;
-  --countdown-background-color: #433765;
+  --countdown-background-color: #07011bab;
   --main-text-color: #f7f6f4;
   --title-text-color: #d8b08c;
 }
@@ -14,8 +14,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'nabana';
-  src: url('./fonts/nabana.shadow-bold.ttf') format('truetype');
+  font-family: 'LuckiestGuy';
+  src: url('./fonts/LuckiestGuy-Regular.ttf') format('truetype');
   font-style: normal;
 }
 @font-face {
@@ -33,7 +33,7 @@ body {
   /* background-color: var(--main-background-color); */
   background-color: #000;
   background-size: cover;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'LuckiestGuy', cursive;
   font-size: 1.1em;
 }
 

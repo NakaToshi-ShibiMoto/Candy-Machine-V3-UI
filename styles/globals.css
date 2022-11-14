@@ -1,10 +1,14 @@
+
+
+
+
 /* Customize your main colors in :root variables */
 :root {
   --main-background-color: #000;
   --card-background-color: #804980;
   --countdown-background-color: #433765;
   --main-text-color: #f7f6f4;
-  --title-text-color: #d8b08c;
+  --title-text-color: #a72f8b;
 }
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;900&display=swap');
 
@@ -14,8 +18,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'nabana';
-  src: url('./fonts/nabana.shadow-bold.ttf') format('truetype');
+  font-family: 'LuckiestGuy';
+  src: url('./fonts/LuckiestGuy-Regular.ttf') format('truetype');
   font-style: normal;
 }
 @font-face {
@@ -33,7 +37,7 @@ body {
   background-color: var(--main-background-color);
   /* background-color: #000; */
   background-size: cover;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'LuckiestGuy', cursive;
   font-size: 1.1em;
   
   margin: 0;
@@ -49,6 +53,7 @@ body {
 h2,
 p {
   color: var(--main-text-color);
+  font-size: medium;
 }
 
 h3 {
@@ -78,3 +83,178 @@ code {
 .wallet-adapter-modal-title {
   color: #000000;
 }
+
+
+
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+  box-sizing: border-box;
+  text-align: left;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2{
+  color: #ffffffec;
+  font-family: "papyrus";
+
+  font-size: x-large  ;
+
+},
+
+
+h3{
+  color: #ffffffec;
+  font-family: "luckiestGuy";
+  letter-spacing: 4px;
+  font-size: xx-large  ;
+
+},
+
+h4 {
+  color: #ffffffec;
+  font-family: "papyrus";
+ 
+  font-size: larger  ;
+
+}
+
+h5{
+
+  color: #ffffffec;
+  font-family: "papyrus";
+ 
+  font-size: x-large  ;
+
+}
+
+,
+
+h6{
+  color: #ffffffec;
+  font-family: "luckiestGuy";
+  letter-spacing: 4px;
+  font-size: xx-large  ;
+
+},
+
+h1 {
+  color: #ffffffec;
+  font-family: "papyrus";
+ 
+  font-size: large  ;
+
+},
+
+
+a {
+	color: #ffffffec;
+ 
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+  box-sizing: border-box;
+  width:100vw;
+  	padding-top: .5em;
+	padding-bottom: .5em;
+	-webkit-box-shadow: 6px 12px 10px 0px rgba(139, 12, 236, 0.75);
+	-moz-box-shadow: 6px 10px 14px 0px rgba(166, 9, 186, 0.75);
+	box-shadow: 4px 8px 6px 0px rgba(239, 13, 171, 0.68);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+  text-align: initial;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+/*.header-nav {
+  box-sizing: border-box;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #9a0bdc82;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+ 
+  
+}
+*/
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header-nav,
+	.main-nav {
+		display: flex;
+	}
+	.header-nav {
+		flex-direction: column;
+		align-items: center;
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+
+	}
+
+
+
+@media (min-width: 1025px) {
+	.header-nav {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+
+

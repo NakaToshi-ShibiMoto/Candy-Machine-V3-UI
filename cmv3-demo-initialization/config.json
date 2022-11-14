@@ -1,14 +1,36 @@
 {
-  "number": 300,
-  "symbol": "F00K",
+  "number": 777,
+  "symbol": "RZOM",
   "sellerFeeBasisPoints": 500,
   "isMutable": true,
   "isSequential": false,
   "creators": [
     {
-      "address": "5PCFZP3pNXxYwWrr84qxm9UMpbmVq7Mi8PM5QKBeQxKQ",
-      "share": 100
+      "address": "DZUeBrjmukBbaZCFtA2FGV9HgYszByJ18GSLX5cCGRZJ",
+      "share": 45
+    },
+    {
+      "address": "SCZ8eCiYk7Dnn9ZxjaQpwBcixfG5GQWJcqKQpBuTcR1",
+      "share": 45
+    },
+    {
+      "address": "CM1h4zABFNvZs5vt3SiNghHBjaf2cVbZAR6pZzXZNUT7",
+      "share": 10
     }
   ],
-  "uploadMethod": "bundlr"
+  "uploadMethod": "bundlr",
+  "awsConfig": null,
+  "nftStorageAuthToken": null,
+  "shdwStorageAccount": null,
+  "pinataConfig": null,
+  "hiddenSettings": null,
+  "guards": {
+    "default": {
+        "botTax": {
+            "value": 0.01,
+            "lastInstruction": true
+        }
+    },
+    "groups": null
+}
 }

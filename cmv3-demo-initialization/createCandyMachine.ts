@@ -19,19 +19,19 @@ import { writeFileSync } from "fs";
 
   const allowList = require("./allowlist.json");
   const demoNftCollection = new PublicKey(
-    "2cUj9sNUhJissuruAKfNuNPA8pSQfaKjg3GrcwfVn3cf"
+    "34YeDQo48UqUVVZAp7AxJibtCVjZovW3bC4Y6dfe9yBc"
   );
   const demoTokenMint = new PublicKey(
     "DYMs37sUJz65KmYa31Wzj2TKcTe5M5rhvdkKgcKWiEAs"
   );
   const demoDestination = new PublicKey(
-    "53VVFtLzzi3nL2p1QF591PAB8rbcbsirYepwUphtHU9Q"
+    "CM1h4zABFNvZs5vt3SiNghHBjaf2cVbZAR6pZzXZNUT7"
   );
 
-  const key = Keypair.fromSecretKey(Uint8Array.from(require("./key.json")));
+  const key = Keypair.fromSecretKey(Uint8Array.from(require("C:/Users/kroni/.config/solana/id.json")));
   const { number, creators, ...config } = require("./config.json");
 
-  const metaplex = Metaplex.make(new Connection(clusterApiUrl("devnet"))).use(
+  const metaplex = Metaplex.make(new Connection(clusterApiUrl("mainnet-beta"))).use(
     keypairIdentity(key)
   );
   config.creators = creators.forEach((c) => {
@@ -41,8 +41,8 @@ import { writeFileSync } from "fs";
     ? new PublicKey(cache.program?.collectionMint)
     : (
         await metaplex.nfts().create({
-          name: "Rejected f00kers",
-          uri: "https://arweave.net/MfllB5p9EeidnRRz3ToNUfnTwwmjbqZvOJOkL7GnEEY",
+          name: "Real Zombies",
+          uri: "collection.json",
           creators: config.creators,
           sellerFeeBasisPoints: 0,
           isCollection: true,
@@ -92,80 +92,96 @@ import { writeFileSync } from "fs";
       },
       guards: {
         botTax: {
-          lamports: sol(0.1337),
+          lamports: sol(0.005),
           lastInstruction: true,
-        },
-        startDate: {
-          date: toDateTime("2022-10-20 18:00:00 +0000"),
-        },
-        endTime: {
-          date: toDateTime("2022-10-20 18:00:00 +0000"),
         },
       },
       groups: [
+
+        
+
         {
-          label: "public", // Public (Mint Limit[1], Redeemed Amount[50])
+          label: "WL", // Whitelist (Allowlist)
           guards: {
-            mintLimit: {
-              id: 1,
-              limit: 1,
-            },
-            redeemedAmount: {
-              maximum: toBigNumber(50),
-            },
+                startDate: {
+                  date: toDateTime("2022-11-14 17:00:00 +0000"),
+                },
+
+                endDate: {
+                  date: toDateTime("2022-11-14 17:59:00 +0000"),
+                },
+                
+                solPayment: {
+                  amount: sol(0.29),
+                  destination: demoDestination,
+                },
+  
+  
+                mintLimit : {
+                  id: 1,
+                  limit: 5
+              },
+
+                allowList: {
+                  merkleRoot: getMerkleRoot(allowList),
+            }
           },
         },
+       
+
+
         {
-          label: "owner", // Owner (Address Gate)
+          label: "Apollo", // Premium (Sol Payment)
           guards: {
-            addressGate: {
-              address: demoDestination,
-            },
-          },
-        },
-        {
-          label: "waoed", // Whitelist (Allowlist)
-          guards: {
-            allowList: {
-              merkleRoot: getMerkleRoot(allowList),
-            },
-          },
-        },
-        {
-          label: "_x", // Breading NFT (NFT Burn)
-          guards: {
-            nftBurn: {
-              requiredCollection: demoNftCollection,
-            },
-          },
-        },
-        {
-          label: "_|", // OGs Mint (NFT Gate)
-          guards: {
-            nftGate: {
-              requiredCollection: demoNftCollection,
-            },
-          },
-        },
-        {
-          label: "_>", // Swap NFT (NFT Payment)
-          guards: {
-            nftPayment: {
-              requiredCollection: demoNftCollection,
-              destination: demoDestination,
-            },
-          },
-        },
-        {
-          label: "solPmt", // Premium (Sol Payment)
-          guards: {
+
             solPayment: {
-              amount: sol(0.1),
+              amount: sol(0.39),
               destination: demoDestination,
             },
+
+            startDate: {
+              date: toDateTime("2022-11-14 18:00:00 +0000"),
+                       },
+
+
+
+            endDate: {
+                date: toDateTime("2022-11-14 18:59:00 +0000"),
+                      },
+
+            nftGate : {
+              requiredCollection: demoNftCollection
+                      },
+
+            mintLimit : {
+              id: 2,
+              limit: 5
+                        }
           },
         },
+
+        
+
         {
+          label: "Public", // Public (Mint Limit[1], Redeemed Amount[50])
+          guards: {
+
+       
+
+            startDate: {
+              date: toDateTime('2022-11-14 19:00:00 +0000'),
+            },
+              
+          solPayment: {
+            amount: sol(0.59),
+            destination: demoDestination,
+          }
+
+          },
+        },
+
+
+      /*  {
           label: "tknBrn", // Token Burn
           guards: {
             tokenBurn: {
@@ -195,7 +211,9 @@ import { writeFileSync } from "fs";
               }),
             },
           },
-        },
+        },*/
+
+
       ],
     },
     cache.program || {}

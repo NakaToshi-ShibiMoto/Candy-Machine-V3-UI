@@ -1,33 +1,31 @@
 [
   {
-    "title": "Wave 1",
-    "description": "Only whitelisted",
+    "title": "Whitelist",
+    "description": "Whitelist Only",
     "groups": [
       {
-        "label": "waoed"
+        "label": "WL",
+        "description": "PRICE: 0.29 SOL (MAX 5)"
       }
     ]
   },
   {
-    "title": "Wave 2",
-    "description": "Pay to mint",
+    "title": "Apollo",
+    "description": "RealGod Holders Only",
     "groups": [
       {
-        "label": "tknPmt",
-        "description": "You can only mint buy paying the specific token"
-      },
-      {
-        "label": "nftPmt",
-        "description": "You can only mint buy paying the specific nft"
+        "label": "Apollo",
+        "description": "PRICE: 0.39 SOL (MAX 5)"
       }
     ]
   },
   {
-    "title": "Wave 3",
-    "description": "Available for all",
+    "title": "Public",
+    "description": "Available for Public",
     "groups": [
       {
-        "label": "public"
+        "label": "Public",
+        "description": "PRICE: 0.59 SOL (UNLIMITED) "
       }
     ]
   }

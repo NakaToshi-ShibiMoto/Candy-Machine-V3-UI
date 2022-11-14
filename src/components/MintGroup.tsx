@@ -1,6 +1,6 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
-import React from "react";
+import React, { useState } from "react";
 import Countdown from "react-countdown";
 import { CandyMachineV3, NftPaymentMintSettings } from "../hooks/types";
 import { MultiMintButton } from "../MultiMintButton";
@@ -9,10 +9,11 @@ import styled from "styled-components";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { Paper } from "@material-ui/core";
 import { GatewayProvider } from "@civic/solana-gateway-react";
+import { Nft } from "@metaplex-foundation/js";
 
 const ConnectButton = styled(WalletMultiButton)`
   border-radius: 5px !important;
-  padding: 6px 16px;
+  padding: 6px 10px;
   background-color: #fff;
   color: #000;
   margin: 0 auto;
@@ -22,8 +23,8 @@ const Card = styled(Paper)`
   display: inline-block;
   background-color: var(--countdown-background-color) !important;
   margin: 5px;
-  min-width: 40px;
-  padding: 24px;
+  min-width: 35px;
+  padding: 20px;
   h1 {
     margin: 0px;
   }
@@ -33,21 +34,24 @@ const renderGoLiveDateCounter = ({ days, hours, minutes, seconds }: any) => {
   return (
     <div>
       <Card elevation={1}>
-        <h1>{days}</h1>Days
+        <h3>{days}</h3>Days
       </Card>
       <Card elevation={1}>
-        <h1>{hours}</h1>
+        <h3>{hours}</h3>
         Hours
       </Card>
       <Card elevation={1}>
-        <h1>{minutes}</h1>Mins
+        <h3>{minutes}</h3>Mins
       </Card>
       <Card elevation={1}>
-        <h1>{seconds}</h1>Secs
+        <h3>{seconds}</h3>Secs
       </Card>
     </div>
   );
 };
+
+
+
 
 export default function MintGroup({
   mintGroup,
@@ -90,6 +94,8 @@ export default function MintGroup({
     ]
   );
 
+  const [mintedItems, setMintedItems] = useState<Nft[]>();
+
   const startMint = React.useCallback(
     async (quantityString: number = 1) => {
       const nftGuards: NftPaymentMintSettings[] = Array(quantityString)
@@ -122,7 +128,7 @@ export default function MintGroup({
           nftGuards,
         })
         .then((items) => {
-          // setMintedItems(items as any);
+          setMintedItems(items as any);
           console.log("minted", items);
         })
         .catch(
@@ -156,8 +162,10 @@ export default function MintGroup({
     />
   );
 
+  
+
   return (
-    <div style={{ borderTop: "1px solid black", paddingTop: "5px" }}>
+    <div style={{  paddingTop: "5px" }}>
       {mintGroup.title ? <h3>{mintGroup.title}</h3> : null}
       {mintGroup.description ? <p>{mintGroup.description}</p> : null}
 
@@ -171,11 +179,12 @@ export default function MintGroup({
         />
       ) : !wallet?.publicKey ? (
         <ConnectButton>Connect Wallet</ConnectButton>
-      ) : // ) : !guardStates.canPayFor ? (
+    //  ) :  ) : !guardStates.canPayFor ? (
       //   <h1>You cannot pay for the mint</h1>
-      !guardStates.isWalletWhitelisted ? (
-        <h1>Mint is private.</h1>
-      ) : (
+    ) : !guardStates.isWalletWhitelisted ? (
+      <h1>Mint is private.</h1>
+     ) :
+       (
         <>
           <>
             {!!candyMachineV3.items.remaining &&
@@ -190,7 +199,7 @@ export default function MintGroup({
                 }}
                 gatekeeperNetwork={guards.gatekeeperNetwork}
                 clusterUrl={connection.rpcEndpoint}
-                cluster={process.env.NEXT_PUBLIC_SOLANA_NETWORK || "devnet"}
+                cluster={process.env.NEXT_PUBLIC_SOLANA_NETWORK || "mainnet-beta"}
                 options={{ autoShowModal: false }}
               >
                 <MintButton gatekeeperNetwork={guards.gatekeeperNetwork} />
@@ -201,6 +210,7 @@ export default function MintGroup({
           </>
         </>
       )}
+      
     </div>
   );
 }

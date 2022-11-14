@@ -18,7 +18,7 @@ const key = Keypair.fromSecretKey(Uint8Array.from(require("./key.json")));
 const { number, creators, ...config } = require("./config.json");
 
 const metaplex = Metaplex.make(
-  new Connection("https://metaplex.devnet.rpcpool.com/")
+  new Connection("https://rpc.ankr.com/solana")
 ).use(keypairIdentity(key));
 
 const allowList = require("./allowlist.json");
@@ -50,11 +50,11 @@ const mintingWallet = metaplex.identity().publicKey;
   //   });
 
   //   return;
-  const group = "waoed";
+  const group = "WL";
   const transactionBuilders: TransactionBuilder[] = [
     callCandyGuardRouteBuilder(metaplex, {
       candyMachine,
-      guard: "allowList",
+      guard: "allowlist",
       group,
       settings: {
         path: "proof",

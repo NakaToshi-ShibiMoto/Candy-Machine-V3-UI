@@ -1,0 +1,2 @@
+{"v":0,"name":"sugar","msg":"Lend me some sugar, I am your neighbor.","level":30,"hostname":"KRoNiC-PC","pid":10532,"time":"2022-11-11T02:06:32.5539314Z","target":"sugar","line":118,"file":"src/main.rs"}
+{"v":0,"name":"sugar","msg":"Cache file 'cache.json' not found. Run `sugar upload` to create it or provide it with the --cache option.","level":50,"hostname":"KRoNiC-PC","pid":10532,"time":"2022-11-11T02:06:32.5547251Z","target":"sugar_cli::cache","line":157,"file":"src\\cache.rs"}

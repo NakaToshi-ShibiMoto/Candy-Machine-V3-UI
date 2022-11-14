@@ -19,7 +19,7 @@ export const CTAButton = styled(Button)`
   color: #000 !important;
   min-width: 258px !important;
   font-size: 1em !important;
-  font-family: "Patrick Hand", cursive;
+  font-family: "LuckiestGuy", cursive;
   font-weight: bold !important;
 `;
 
@@ -35,14 +35,14 @@ export const Minus = styled.button`
   border: 0;
   border-radius: 5px;
   box-sizing: border-box;
-  font-family: "Patrick Hand", cursive;
+  font-family: "LuckiestGuy", cursive;
   vertical-align: middle;
   transition: all linear 0.3s;
 
   :hover {
     border: none;
     outline: none !important;
-    background: #d09a69;
+    background: rebeccapurple;
   }
   :not(disabled) {
     cursor: pointer;
@@ -59,13 +59,13 @@ export const Plus = styled(Minus)`
 
 export const NumericField = styled.input`
   font-size: 2em !important;
-  padding: 0;
+  padding: 10;
   vertical-align: middle;
   background-color: var(--main-text-color);
   box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%),
     0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
   box-sizing: border-box;
-  font-family: "Patrick Hand", cursive;
+  font-family: "LuckiestGuy", cursive;
   font-weight: 500;
   line-height: 1px;
   border: none;
@@ -189,7 +189,7 @@ export const MultiMintButton = ({
 
   const incrementValue = useCallback(() => {
     setMintCount((value) => {
-      // if (value < 10) return value + 1;
+      //if (value < 10) return value + 1;
       return Math.min(value + 1, limit);
     });
   }, [limit]);
@@ -246,20 +246,10 @@ export const MultiMintButton = ({
         <CTAButton
           disabled={disabled}
           onClick={async () => {
-            console.log("isActive gatekeeperNetwork", {
-              isActive,
-              gatekeeperNetwork,
-            });
-            if (isActive && gatekeeperNetwork) {
-              if (gatewayStatus === GatewayStatus.ACTIVE) {
-                await onMint(mintCount);
-              } else {
-                setWaitForActiveToken(true);
-                await requestGatewayToken();
-              }
-            } else {
-              await onMint(mintCount);
-            }
+            console.log("Minting...");
+            setLoading(true);
+            await onMint(mintCount);
+            setLoading(false);
           }}
           variant="contained"
         >
@@ -285,10 +275,10 @@ export const MultiMintButton = ({
         </CTAButton>
       </div>
       {!isSoldOut && isActive && (
-        <h3>
+        <h5>
           Total estimated cost (Solana fees included): {totalSolCost} SOL
           {totalTokenCostsString}
-        </h3>
+        </h5>
       )}
       {guardStates.messages?.map((m, i) => (
         <p key={i}>{m}</p>
@@ -296,3 +286,4 @@ export const MultiMintButton = ({
     </div>
   );
 };
+
