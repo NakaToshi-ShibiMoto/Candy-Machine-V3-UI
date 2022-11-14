@@ -199,7 +199,7 @@ export default function MintGroup({
                 }}
                 gatekeeperNetwork={guards.gatekeeperNetwork}
                 clusterUrl={connection.rpcEndpoint}
-                cluster={process.env.NEXT_PUBLIC_SOLANA_NETWORK || "mainnet-beta"}
+                cluster={process.env.NEXT_PUBLIC_SOLANA_NETWORK || "Devnet"}
                 options={{ autoShowModal: false }}
               >
                 <MintButton gatekeeperNetwork={guards.gatekeeperNetwork} />

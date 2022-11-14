@@ -31,7 +31,7 @@ import { writeFileSync } from "fs";
   const key = Keypair.fromSecretKey(Uint8Array.from(require("C:/Users/kroni/.config/solana/id.json")));
   const { number, creators, ...config } = require("./config.json");
 
-  const metaplex = Metaplex.make(new Connection(clusterApiUrl("mainnet-beta"))).use(
+  const metaplex = Metaplex.make(new Connection(clusterApiUrl("devnet"))).use(
     keypairIdentity(key)
   );
   config.creators = creators.forEach((c) => {

@@ -210,7 +210,7 @@ const Home = (props: HomeProps) => {
   const openOnSolscan = useCallback((mint: any) => {
     window.open(
       `https://solscan.io/address/${mint}${
-        [WalletAdapterNetwork.Mainnet, WalletAdapterNetwork.Testnet].includes(
+        [WalletAdapterNetwork.Devnet, WalletAdapterNetwork.Testnet].includes(
           network
         )
           ? `?cluster=${network}`
