@@ -18,7 +18,7 @@ const key = Keypair.fromSecretKey(Uint8Array.from(require("./key.json")));
 const { number, creators, ...config } = require("./config.json");
 
 const metaplex = Metaplex.make(
-  new Connection("https://rpc.ankr.com/solana")
+  new Connection("https://metaplex.devnet.rpcpool.com/")
 ).use(keypairIdentity(key));
 
 const allowList = require("./allowlist.json");

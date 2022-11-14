@@ -19,7 +19,7 @@ import { writeFileSync } from "fs";
 
   const allowList = require("./allowlist.json");
   const demoNftCollection = new PublicKey(
-    "34YeDQo48UqUVVZAp7AxJibtCVjZovW3bC4Y6dfe9yBc"
+    "55uoGn7D3imjCHSxKF9CxQAjgV5kZ7EVHwYtfiphJTRV"
   );
   const demoTokenMint = new PublicKey(
     "DYMs37sUJz65KmYa31Wzj2TKcTe5M5rhvdkKgcKWiEAs"
