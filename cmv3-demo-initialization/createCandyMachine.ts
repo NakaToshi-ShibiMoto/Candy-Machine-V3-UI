@@ -104,11 +104,11 @@ import { writeFileSync } from "fs";
           label: "WL", // Whitelist (Allowlist)
           guards: {
                 startDate: {
-                  date: toDateTime("2022-11-14 17:00:00 +0000"),
+                  date: toDateTime("2022-11-14 18:20:00 +1000"),
                 },
 
                 endDate: {
-                  date: toDateTime("2022-11-14 17:59:00 +0000"),
+                  date: toDateTime("2022-11-14 18:59:00 +1000"),
                 },
                 
                 solPayment: {
@@ -140,13 +140,13 @@ import { writeFileSync } from "fs";
             },
 
             startDate: {
-              date: toDateTime("2022-11-14 18:00:00 +0000"),
+              date: toDateTime("2022-11-14 19:00:00 +1000"),
                        },
 
 
 
             endDate: {
-                date: toDateTime("2022-11-14 18:59:00 +0000"),
+                date: toDateTime("2022-11-14 19:59:00 +1000"),
                       },
 
             nftGate : {
@@ -169,7 +169,7 @@ import { writeFileSync } from "fs";
        
 
             startDate: {
-              date: toDateTime('2022-11-14 19:00:00 +0000'),
+              date: toDateTime('2022-11-14 20:00:00 +1000'),
             },
               
           solPayment: {

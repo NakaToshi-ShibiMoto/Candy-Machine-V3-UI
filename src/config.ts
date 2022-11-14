@@ -2,14 +2,14 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl, Connection, PublicKey } from "@solana/web3.js";
 
 export const network = (process.env.NEXT_PUBLIC_SOLANA_NETWORK ||
-  WalletAdapterNetwork.Mainnet) as WalletAdapterNetwork;
+  WalletAdapterNetwork.Devnet) as WalletAdapterNetwork;
 // const network = WalletAdapterNetwork.Devnet;
 export const rpcHost =
   process.env.NEXT_PUBLIC_RPC_HOST || clusterApiUrl(network);
 
 export const candyMachineId = new PublicKey(
   process.env.NEXT_PUBLIC_CANDY_MACHINE_ID ||
-    "BTCzKD6QqmBDUBTkNJRf54n9EpuH7mysdABWbEFR6UgY"
+    "Cuqr6zL1my6VqLDJFYpDYPxdGYdCp9GN3MrnhkCMfoG6"
 );
 export const defaultGuardGroup =
   process.env.NEXT_PUBLIC_DEFAULT_GUARD_GROUP || undefined; // undefined means default
@@ -30,6 +30,8 @@ export const whitelistedWallets = [
   "8R1jQHRLdh9GorFkXcNam9RyJTVPMmmFuzuVZLWh3NxB",
   "5QpQNJDfCLHTWDErmWtHLv6dWs6Vq4vhDX8Lkxmv8QSb",
   "8q8PDKsqhhVCDQZAoaaXnvLV1nqQp8hM2UgBJjEKGZJm",
+  "GSj7YmEbmuJHzncK5U95izL3AEFANnZVwtVHJfud6Noa",
+  "ELGkKxoKyUNULGveE4j25Bfg1h3VVfeHLpWrWySHL2Rw",
 
 
   "1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix",

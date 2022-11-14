@@ -148,7 +148,7 @@ const Home = (props: HomeProps) => {
   );
 
   const [balance, setBalance] = useState<number>();
-  const [mintedItems, setMintedItems] = useState<Nft[]>();
+  const [mintedItems, setMintedItems] = useState<any[]>();
   
 
   const [alertState, setAlertState] = useState<AlertState>({

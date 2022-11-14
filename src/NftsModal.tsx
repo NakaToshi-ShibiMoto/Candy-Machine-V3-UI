@@ -68,7 +68,7 @@ export default function NftsModal({
       maxWidth={"md"}
     >
       <DialogTitle id="alert-dialog-slide-title">
-        Nfts you had just minted!
+        MINTED NFTS
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-slide-description">

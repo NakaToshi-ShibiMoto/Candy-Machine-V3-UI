@@ -6,16 +6,8 @@
   "isSequential": false,
   "creators": [
     {
-      "address": "DZUeBrjmukBbaZCFtA2FGV9HgYszByJ18GSLX5cCGRZJ",
-      "share": 45
-    },
-    {
-      "address": "SCZ8eCiYk7Dnn9ZxjaQpwBcixfG5GQWJcqKQpBuTcR1",
-      "share": 45
-    },
-    {
       "address": "CM1h4zABFNvZs5vt3SiNghHBjaf2cVbZAR6pZzXZNUT7",
-      "share": 10
+      "share": 100
     }
   ],
   "uploadMethod": "bundlr",
